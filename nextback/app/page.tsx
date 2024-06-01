@@ -1,9 +1,12 @@
 import axios from "axios";
 
 async function getUserDetails() {
-  await new Promise(( r ) => setTimeout(r, 5000))
-  const response = await axios.get("https://week-13-offline.kirattechnologies.workers.dev/api/v1/user/details")
-	return response.data;
+  try{
+    const response = await axios.get("http://localhost:3000/api/user")
+    return response.data;
+  } catch(e) {
+    console.log(e);
+  }
 }
 
 export default async function Home() {
@@ -16,8 +19,7 @@ export default async function Home() {
                 <div>
                     Name: {userData?.name}
                 </div>
-                
-                {userData?.email}
+                    Email: {userData?.email}
             </div>
         </div>
     </div>
