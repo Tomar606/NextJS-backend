@@ -3,5 +3,6 @@ export default function Loading() {
         <div className="flex justify-center">
             Loading...
         </div>
+        <div>hello</div>
     </div>
 }
